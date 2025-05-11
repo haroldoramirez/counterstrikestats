@@ -17,13 +17,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <div th:replace="fragment/header :: header"></div>
 
-    <div class="container mt-5">
+    <div class="mt-5">
       <div class="card shadow rounded">
         <div class="card-header bg-dark text-white">
           <h4 class="mb-0">Registro de Jogador</h4>
         </div>
         <div class="card-body">
-          <form>
+          <form id="formularioRegistro" method="post" th:action="@{/register/create}">
             <div class="mb-3">
               <label for="name" class="form-label">Nome</label>
               <input type="text" class="form-control" id="name" name="name" placeholder="Digite o nome do jogador" required />
@@ -46,18 +46,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <p class="text-muted mb-4">* Todos os campos são obrigatórios</p>
 
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button id="registrar" name="registrar" type="button" class="btn btn-success">Registrar</button>
+            <button type="button" class="btn btn-primary" id="cancelar" name="listar">Cancelar</button>
+
           </form>
         </div>
       </div>
     </div>
 
     <div th:replace="fragment/footer :: footer"></div>
+
   </div>
 </main>
+
+<!-- Modal -->
+<div class="modal fade" id="confirmarRegistro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="confirmarRegistroLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmarRegistroLabel">Confirmar o registro?</h5>
+      </div>
+      <div class="modal-body">
+        <label>NAme:</label>
+        <p id="paragrafoName"></p>
+        <label>Kills:</label>
+        <p id="paragrafoKills"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+        <button id="confirmar" type="button" class="btn btn-primary">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
 <script src="/webjars/jquery-validation/1.19.5/jquery.validate.min.js"></script>
 <script src="/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-<script src="../js/create.js"></script>
+<script src="../js/register/create.js"></script>
 </body>
 </html>
