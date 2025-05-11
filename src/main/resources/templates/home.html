@@ -13,9 +13,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <main>
-  <div class="container py-4">
+  <div class="container">
 
-    <div th:replace="fragment/header :: header"></div>
+    <div th:replace="~{fragment/header :: header}"></div>
 
     <div class="p-5 mb-4 bg-light rounded-3">
       <div class="container-fluid py-5">
@@ -26,7 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div>
     </div>
 
-    <div th:replace="fragment/footer :: footer"></div>
+    <div th:replace="~{fragment/footer :: footer}"></div>
   </div>
 </main>
 <script src="/webjars/jquery/3.7.1/jquery.min.js"></script>

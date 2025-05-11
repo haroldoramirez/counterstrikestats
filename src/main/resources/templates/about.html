@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Counter Strike Stats | About</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<main>
+    <div class="container">
+
+        <div th:replace="~{fragment/header :: header}"></div>
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+                <div class="h-100 p-5 text-white bg-dark rounded-3">
+                    <h2>Change the background</h2>
+                    <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
+                    <button class="btn btn-outline-light" type="button">Example button</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2>Add borders</h2>
+                    <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+                    <button class="btn btn-outline-secondary" type="button">Example button</button>
+                </div>
+            </div>
+        </div>
+
+        <div th:replace="~{fragment/footer :: footer}"></div>
+    </div>
+</main>
+<script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
+<script src="/webjars/jquery-validation/1.19.5/jquery.validate.min.js"></script>
+<script src="/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="../js/about.js"></script>
+</body>
+</html>

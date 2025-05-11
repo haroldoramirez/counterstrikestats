@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Counter Strike Stats | Cadastrar Jogador</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<main>
+    <div class="container">
+
+        <div th:replace="~{fragment/header :: header}"></div>
+
+        <div class="mt-5">
+            <div class="card shadow rounded">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">Cadastrar jogador</h4>
+                </div>
+                <div class="card-body">
+                    <form id="formularioRegistro" method="post" th:action="@{/players/create}">
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome *</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Digite o nome do jogador" required />
+                        </div>
+
+                        <p class="text-muted mb-4">* Todos os campos são obrigatórios</p>
+
+                        <button id="registrar" name="registrar" type="button" class="btn btn-success">Cadastrar</button>
+                        <button type="button" class="btn btn-primary" id="cancelar" name="listar">Cancelar</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div th:replace="~{fragment/footer :: footer}"></div>
+
+    </div>
+</main>
+
+<!-- Modal -->
+<div class="modal fade" id="confirmarRegistro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="confirmarRegistroLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmarRegistroLabel">Confirmar o registro?</h5>
+            </div>
+            <div class="modal-body">
+                <label>Name:</label>
+                <p id="paragrafoName"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                <button id="confirmar" type="button" class="btn btn-primary">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
+<script src="/webjars/jquery-validation/1.19.5/jquery.validate.min.js"></script>
+<script src="/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="../js/player/create.js"></script>
+</body>
+</html>
