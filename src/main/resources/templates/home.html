@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Counter Strike Stats | Dashboard</title>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<main>
+  <div class="container py-4">
+
+    <div th:replace="fragment/header :: header"></div>
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Seja bem-vindo!</h1>
+        <p class="col-md-10 fs-4">Esta aplicação tem como objetivo registrar e gerar estatísticas do desempenho de jogadores da comunidade de Counter Strike 2 após o final de cada partida.</p>
+        <a th:href="@{/dashboard}" class="btn btn-primary btn-lg" type="button">Acessar Estatísticas</a>
+        <a th:href="@{/register}" type="button" class="btn btn-outline-secondary btn-lg px-4">Registrar</a>
+      </div>
+    </div>
+
+    <div th:replace="fragment/footer :: footer"></div>
+  </div>
+</main>
+<script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
+<script src="/webjars/jquery-validation/1.19.5/jquery.validate.min.js"></script>
+<script src="/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="../js/home.js"></script>
+</body>
+</html>

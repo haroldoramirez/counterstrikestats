@@ -1,0 +1,1 @@
+Tudo que tem a ver com apis externas e dtos

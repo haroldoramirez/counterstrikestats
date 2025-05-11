@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Counter Strike Stats | Register</title>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<main>
+  <div class="container py-4">
+
+    <div th:replace="fragment/header :: header"></div>
+
+    <div class="container mt-5">
+      <div class="card shadow rounded">
+        <div class="card-header bg-dark text-white">
+          <h4 class="mb-0">Registro de Jogador</h4>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Digite o nome do jogador" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="kills" class="form-label">Kills</label>
+              <input type="number" class="form-control" id="kills" name="kills" placeholder="Quantidade de eliminações" min="0" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="deaths" class="form-label">Deaths</label>
+              <input type="number" class="form-control" id="deaths" name="deaths" placeholder="Quantidade de mortes" min="0" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="damage" class="form-label">Damage</label>
+              <input type="number" class="form-control" id="damage" name="damage" placeholder="Dano causado" min="0" required />
+            </div>
+
+            <p class="text-muted mb-4">* Todos os campos são obrigatórios</p>
+
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div th:replace="fragment/footer :: footer"></div>
+  </div>
+</main>
+<script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
+<script src="/webjars/jquery-validation/1.19.5/jquery.validate.min.js"></script>
+<script src="/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="../js/create.js"></script>
+</body>
+</html>
